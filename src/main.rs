@@ -1,8 +1,7 @@
 use std::{fs::File, io::Write};
 
 use clap::{CommandFactory, Parser};
-use clap::error::{ErrorKind};
-
+use clap::error::ErrorKind;
 use image::io::Reader;
 
 #[derive(Parser)]
