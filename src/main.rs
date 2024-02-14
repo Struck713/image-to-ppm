@@ -49,22 +49,31 @@ fn write_ppm_image(path: String, width: u32, height: u32, bytes: &[u8]) {
         data.push('\n');
         file.write(data.as_bytes()).expect("Failed to write metadata to the file");
 
-        
-        // write
+        let image_has_alpha = ((bytes.len() / 4) as u32) == width * height;
+        println!("Bytes to write: {}", bytes.len());
+        println!("Image has alpha layer: {}", image_has_alpha);
+
         let mut pixels_written = 0;
-        let mut index = 0;
-        while index < bytes.len() {
-            if index != 0 && index % 4 == 0 { // skip alpha byte
-                file.write(&bytes[index - 4..index - 1]).expect("Failed to write pixels to file");
-                pixels_written += 1;
+        if image_has_alpha {
+            // write
+            let mut index = 1;
+            while index < bytes.len() {
+                if index % 4 == 0 { // skip alpha byte
+                    file.write(&bytes[index - 4..index - 1]).expect("Failed to write pixels to file");
+                    pixels_written += 1;
+                }
+                index += 1;
             }
-            index += 1;
+
+            // write final pixel
+            file.write(&bytes[index - 4..index - 1]).expect("Failed to write pixels to file");
+            pixels_written += 1;
+        } else {
+            file.write(bytes).expect("Failed to write pixels to file");
+            pixels_written += bytes.len() / 3;
         }
 
-        // write final pixel
-        file.write(&bytes[index - 4..index - 1]).expect("Failed to write pixels to file");
-        pixels_written += 1;
 
-        println!("{} pixels written to {:?}", pixels_written, &path);
+        println!("{} pixels written to {}", pixels_written, &path);
     }
 }
