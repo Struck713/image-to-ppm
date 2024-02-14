@@ -1,6 +1,6 @@
 use std::{fs::File, io::Write};
 
-use clap::{Parser};
+use clap::Parser;
 use image::io::Reader;
 
 #[derive(Parser)]
