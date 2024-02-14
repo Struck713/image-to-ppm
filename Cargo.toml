@@ -1,5 +1,5 @@
 [package]
-name = "png_to_ppm"
+name = "images_to_ppm"
 version = "0.1.0"
 edition = "2021"
 
