@@ -1,7 +1,13 @@
 [package]
-name = "images_to_ppm"
+name = "image-to-ppm"
 version = "0.1.0"
 edition = "2021"
+
+license-file = "LICENSE"
+description = "Convert images to PPM (raw pixel format)"
+documentation = "https://docs.rs/image-to-ppm"
+repository = "https://github.com/Struck713/image-to-ppm"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
