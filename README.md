@@ -5,10 +5,11 @@ So I wrote this Rust program to make images worse by converting them to PPM.
 
 Currently, this program can convert JPG and PNG images to PPM.
 
+You can install the program using [Cargo](https://crates.io/crates/image-to-ppm), simply run: `cargo install image-to-ppm` and then you can use the command from your command line (assuming your Rust installation is correctly configured).
+
 ## Building
 
 You can build the project using the traditional `cargo build` command. If you need a release build, you can use `cargo build --release`.
-
 
 ## Usage
 
