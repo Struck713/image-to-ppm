@@ -279,8 +279,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "images_to_ppm"
-version = "0.1.0"
+name = "image-to-ppm"
+version = "0.1.1"
 dependencies = [
  "clap",
  "image",

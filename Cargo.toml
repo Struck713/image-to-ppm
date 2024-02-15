@@ -1,9 +1,9 @@
 [package]
 name = "image-to-ppm"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
-license-file = "LICENSE"
+license = "GPL-3.0-only"
 description = "Convert images to PPM (raw pixel format)"
 documentation = "https://docs.rs/image-to-ppm"
 repository = "https://github.com/Struck713/image-to-ppm"
